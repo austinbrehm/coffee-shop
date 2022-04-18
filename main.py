@@ -3,8 +3,11 @@ def main():
         def __init__(self, size):
             self.size = size
 
-        def print_size(self):
-            print(f"Size: {self.size}")
+        def get_size(self):
+            return self.size
+
+        def set_size(self):
+            pass
 
     class Latte(Coffee):
         def __init__(self, size, espresso, milk, flavor):
@@ -12,6 +15,29 @@ def main():
             self.espresso = espresso
             self.milk = milk
             self.flavor = flavor
+
+        def get_espresso(self):
+            return self.espresso
+
+        def set_espresso(self):
+            options = [1, 2, 3]
+            shots = input("Enter the amount of espresso shots: ")
+            if shots in options:
+                self.espresso = shots
+            else:
+                pass
+
+        def get_milk(self):
+            return self.milk
+
+        def set_milk(self):
+            pass
+
+        def get_flavor(self):
+            return self.flavor
+
+        def set_flavor(self):
+            pass
 
     class Cappuccino(Coffee):
         def __init__(self, size, espresso, milk, flavor):
@@ -33,7 +59,7 @@ def main():
               "2. Exit"
               )
     print('\nWelcome to the coffee shop!')
-    new_order = Latte('small', 'regular', '2%', 'none')
+    new_order = Latte('small', 2, '2%', 'none')
 
     while True:
         menu()
