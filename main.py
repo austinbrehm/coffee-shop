@@ -1,23 +1,8 @@
 from tkinter import *
 from tkinter import ttk
-root = Tk()
-# the root window is the main window of the application, an instance of the Tk class. The window is a 3x3 grid
-frm = ttk.Frame(root, padding=20)
-# frame widgets fit inside the root window and contains a label and button
-def print_hello():
-    print('hello')
-
-frm.grid()
-# grid places the form inside the window
-ttk.Label(frm, text="Main Menu").grid(column=0, row=0)
-ttk.Button(frm, text="Order").grid(column=1, row=1)
-ttk.Button(frm, text="Exit", command=root.destroy).grid(column=2, row=1)
-root.mainloop()
-# mainloop method shows the window and terminates with user input
 
 
 def main():
-
     class Coffee:
         def __init__(self, size):
             self.size = size
@@ -83,18 +68,34 @@ def main():
               "1. Order\n"
               "2. Exit"
               )
-    print('\nWelcome to the coffee shop!')
-    new_order = Latte('small', 2, '2%', 'none')
 
-    while True:
-        menu()
-        option = int(input('Select an option: '))
-        if option == 1:
-            pass
-        if option == 2:
-            print('Thank you for visiting the coffee shop. Good bye!')
-            break
+    def gui():
+        root = Tk()
+        root.title("Fuego Coffee Shop")
+        root.iconbitmap('coffeemug.ico')
+        root.geometry('500x500')
+        # the root window is the main window of the application, an instance of the Tk class. The window is a 3x3 grid
+        frm = ttk.Frame(root, padding=20)
+        # frame widgets fit inside the root window and contains a label and button
+        frm.grid()
+        # grid places the form inside the window
+        ttk.Label(frm, text="Menu", font=('Arial', 20, 'underline')).grid(column=0, row=0)
+        ttk.Button(frm, text="Order").grid(column=0, row=3)
+        ttk.Button(frm, text="Exit", command=root.destroy).grid(column=1, row=3)
+        root.mainloop()
+        # mainloop method shows the window and terminates with user input
+
+    gui()
+
+    # while True:
+    # menu()
+    # option = int(input('Select an option: '))
+    # if option == 1:
+    #     pass
+    # if option == 2:
+    #     print('Thank you for visiting the coffee shop. Good bye!')
+    #     break
 
 
-# if __name__ == '__main__':
-    # main()
+if __name__ == '__main__':
+    main()
