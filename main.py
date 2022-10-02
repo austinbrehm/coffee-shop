@@ -73,15 +73,18 @@ def main():
         root = Tk()
         root.title("Fuego Coffee Shop")
         root.iconbitmap('coffeemug.ico')
-        root.geometry('500x500')
+        root.geometry('400x400')
         # the root window is the main window of the application, an instance of the Tk class. The window is a 3x3 grid
         frm = ttk.Frame(root, padding=20)
         # frame widgets fit inside the root window and contains a label and button
         frm.grid()
         # grid places the form inside the window
-        ttk.Label(frm, text="Menu", font=('Arial', 20, 'underline')).grid(column=0, row=0)
-        ttk.Button(frm, text="Order").grid(column=0, row=3)
-        ttk.Button(frm, text="Exit", command=root.destroy).grid(column=1, row=3)
+        menu = ttk.Label(frm, text='Menu', font=('Arial', 18, 'bold')).grid(row=0, column=0)
+        drip = ttk.Label(frm, text='Drip Brew: ', font=('Arial', 12)).grid(row=1, column=0)
+        latte = ttk.Label(frm, text='Latte: ', font=('Arial', 12)).grid(row=2, column=0)
+        cappuccino = ttk.Label(frm, text='Cappuccino: ', font=('Arial', 12)).grid(row=3, column=0)
+        ttk.Button(frm, text="Order").grid(row=4, column=0)
+        ttk.Button(frm, text="Exit", command=root.destroy).grid(row=4, column=1)
         root.mainloop()
         # mainloop method shows the window and terminates with user input
 
